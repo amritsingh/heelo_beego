@@ -15,7 +15,10 @@ func (c *MainController) Get() {
 }
 
 func (c *MainController) Hello() {
-	c.Data["Title"] = "Hello Beego!"
-	c.Data["SubTitle"] = "First Beego Route!"
+	// Get the query parameters from the URL
+	name := c.GetString("name", "Guest")
+	age, _ := c.GetInt("age", 0)
+	c.Data["Name"] = name
+	c.Data["Age"] = age
 	c.TplName = "hello.tpl"
 }
