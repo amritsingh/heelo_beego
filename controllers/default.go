@@ -16,7 +16,7 @@ func (c *MainController) Get() {
 
 func (c *MainController) Hello() {
 	// Get the query parameters from the URL
-	name := c.GetString("name", "Guest")
+	name := c.GetString("name", "")
 	age, _ := c.GetInt("age", 0)
 	c.Data["Name"] = name
 	c.Data["Age"] = age

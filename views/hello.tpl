@@ -7,7 +7,7 @@
 </head>
 
 <body>
-  {{if .Age}}
+  {{if and (.Name) (.Age)}}
     <h1>My name is {{.Name}}</h1>
     <div>
       My age is {{.Age}}
